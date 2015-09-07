@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
+    <name>Latest Post With Image</name>
+    <author>Maureen Davey</author>
+    <version>1.0.0</version>
+    <description>A simple module that displays the title, the first image found in the article, and the introtext (text before the "Read More") from the newest article that has an img HTML tag. Exclude content categories by ID if needed.  If no matching articles with images in the introtext or fulltext are found, nothing will be displayed.</description>
+    <files>
+        <filename>mod_latestpostwimage.xml</filename>
+        <filename module="mod_latestpostwimage">mod_latestpostwimage.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                       name="catids_to_exclude"
+                       type="text"
+                       label="By default the module will pull from all com_content categories that have published articles, including unpublished categories.  To exclude categories, enter the IDs here, separated by commas. (Example: 8,10,14)"
+                       description="You can find each category's ID by going to Content -> Category Manager.  It will display in the table listing your categories, along with each category's title and some other information."
+                        />
+                <field
+                       name="readmore_linked"
+                       type="text"
+                       label="Text to appear after the introtext to link to the full post (i.e. 'Read More...')."
+                       description=""
+                       default="Read More..."
+                        />
+                <field
+                        name="title_classes"
+                        type="text"
+                        label="Enter classes (if any) for the title text, separated by a space."
+                        description="Example: For two classes called .align-left and .header-text, you would enter 'align-left header-text' (minus the single quotes)."
+                        />
+                <field
+                        name="img_classes"
+                        type="text"
+                        label="Enter classes (if any) for the image, separated by a space."
+                        description="Example: For two classes called .align-left and .header-text, you would enter 'align-left header-text' (minus the single quotes)."
+                        />
+                <field
+                        name="text_classes"
+                        type="text"
+                        label="Enter classes (if any) for the intro text, separated by a space."
+                        description="Example: For two classes called .align-left and .header-text, you would enter 'align-left header-text' (minus the single quotes)."
+                        />
+            </fieldset>
+        </fields>
+    </config>
+</extension>
