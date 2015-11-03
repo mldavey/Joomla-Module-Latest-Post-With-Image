@@ -17,13 +17,13 @@ To Do:
 
 File Structure:
 ====
-Joomla-Module-Latest-Post-With-Image
-	readme.md
-	mod_latestpostwimage
-		helper.php
-		index.html
-		mod_latestpostwimage.php
-		mod_latestpostwimage.xml
-		tmpl
-			default.php
-			index.html
+* Joomla-Module-Latest-Post-With-Image
+	* readme.md
+	* mod_latestpostwimage
+		* helper.php
+		* index.html
+		* mod_latestpostwimage.php
+		* mod_latestpostwimage.xml
+		* tmpl
+			* default.php
+			* index.html
