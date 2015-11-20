@@ -1,4 +1,4 @@
-<?php 
+<?php
 // No direct access
 defined('_JEXEC') or die;
 
@@ -7,7 +7,7 @@ $title_classes = $params->get('title_classes');
 $readmore_linked = $params->get('readmore_linked');
 $img_classes = $params->get('img_classes');
 $text_classes = $params->get('text_classes');
-	
+
 //get info about the latest post from the database via helper.php
 
 //as long as we found at least one post matching our criteria, proceed
@@ -26,6 +26,11 @@ if(!empty($latestpost)) {
 		//[0] is the full <img /> tag, [1] is just the path to the image
 
 		//check that image exists
+		if(substr($match[1], 0, 1) === '/') {
+			//if the path is relative and starts with a /, the getimagesize call will fail, so strip out the / if it's the first character
+			$match[1] = substr($match[1], 1);
+		}
+		
 		$checksize = getimagesize($match[1]);
 		if(!empty($checksize)) {
 			//proceed with displaying the image
